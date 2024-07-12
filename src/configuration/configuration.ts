@@ -405,6 +405,8 @@ class Configuration implements IConfiguration {
 
   mouseSelectionGoesIntoVisualMode = true;
 
+  clickGoesIntoInsertMode = false;
+
   changeWordIncludesWhitespace = false;
 
   foldfix = false;

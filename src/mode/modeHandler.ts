@@ -431,6 +431,11 @@ export class ModeHandler implements vscode.Disposable, IModeHandler {
           end: this.vimState.cursorStopPosition,
         };
       }
+
+      if (configuration.clickGoesIntoInsertMode) {
+        await this.setCurrentMode(Mode.Insert);
+      }
+
       void this.updateView({ drawSelection: toDraw, revealRange: false });
     }
   }

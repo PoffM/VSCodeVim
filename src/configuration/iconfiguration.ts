@@ -327,6 +327,11 @@ export interface IConfiguration {
   mouseSelectionGoesIntoVisualMode: boolean;
 
   /**
+   * Does clicking with the mouse put you into insert mode
+   */
+  clickGoesIntoInsertMode: boolean;
+
+  /**
    * Includes trailing whitespace when changing word.
    */
   changeWordIncludesWhitespace: boolean;
