@@ -371,7 +371,10 @@ export class ModeHandler implements vscode.Disposable, IModeHandler {
           this.lastClickWasPastEol = true;
 
           // This prevents you from mouse clicking past the EOL
-          newPosition = newPosition.withColumn(Math.max(newPosition.getLineEnd().character - 1, 0));
+          const offset = configuration.clickGoesIntoInsertMode ? 0 : -1;
+          newPosition = newPosition.withColumn(
+            Math.max(newPosition.getLineEnd().character + offset, 0),
+          );
 
           // Switch back to normal mode since it was a click not a selection
           await this.setCurrentMode(Mode.Normal);
