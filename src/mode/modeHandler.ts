@@ -236,7 +236,8 @@ export class ModeHandler implements vscode.Disposable, IModeHandler {
       );
       if (
         e.selections.some((s) => !s.anchor.isEqual(s.active)) &&
-        allowedModes.includes(this.vimState.currentMode)
+        allowedModes.includes(this.vimState.currentMode) &&
+        configuration.commandSelectionGoesIntoVisualMode
       ) {
         // If we got a visual selection and we are on normal, insert or replace mode, enter visual mode.
         // We shouldn't go to visual mode on any other mode, because the other visual modes are handled
@@ -278,7 +279,10 @@ export class ModeHandler implements vscode.Disposable, IModeHandler {
                 end: this.vimState.cursorStopPosition,
               };
               return;
-            } else if (!selection.active.isEqual(selection.anchor)) {
+            } else if (
+              !selection.active.isEqual(selection.anchor) &&
+              configuration.commandSelectionGoesIntoVisualMode
+            ) {
               Logger.trace('Creating Visual Selection from command!');
               this.vimState.cursorStopPosition = selection.active;
               this.vimState.cursorStartPosition = selection.anchor;
