@@ -98,6 +98,7 @@ export class Configuration implements IConfiguration {
   iskeyword = ''; // Use `editor.wordSeparators`
   matchpairs = '(:),{:},[:]';
   visualstar = false;
+  commandSelectionGoesIntoVisualMode = true;
   mouseSelectionGoesIntoVisualMode = true;
   clickGoesIntoInsertMode = false;
   changeWordIncludesWhitespace = false;

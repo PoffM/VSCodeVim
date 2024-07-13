@@ -960,6 +960,11 @@
           "description": "Uses a hack to move around folds properly.",
           "default": false
         },
+        "vim.commandSelectionGoesIntoVisualMode": {
+          "type": "boolean",
+          "description": "If enabled, VSCode commands like Find (Ctrl+F) and \"Add Selection to Find Next Match\" (Ctrl+D)",
+          "default": true
+        },
         "vim.mouseSelectionGoesIntoVisualMode": {
           "type": "boolean",
           "description": "If enabled, dragging with the mouse activates Visual mode.",

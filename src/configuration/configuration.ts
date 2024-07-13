@@ -403,6 +403,8 @@ class Configuration implements IConfiguration {
 
   visualstar = false;
 
+  commandSelectionGoesIntoVisualMode = true;
+
   mouseSelectionGoesIntoVisualMode = true;
 
   clickGoesIntoInsertMode = false;

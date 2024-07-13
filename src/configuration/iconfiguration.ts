@@ -322,6 +322,12 @@ export interface IConfiguration {
   visualstar: boolean;
 
   /**
+   * If enabled, VSCode commands like Find (Ctrl+F) and "Add Selection to Find Next Match" (Ctrl+D)
+   * put you into visual mode
+   */
+  commandSelectionGoesIntoVisualMode: boolean;
+
+  /**
    * Does dragging with the mouse put you into visual mode
    */
   mouseSelectionGoesIntoVisualMode: boolean;
