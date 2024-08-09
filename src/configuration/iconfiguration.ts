@@ -131,6 +131,11 @@ export interface IConfiguration {
   autoindent: boolean;
 
   /**
+   * Runs VSCode's 'Reindent Selected Lines' command when you use <S-a> on an empty line.
+   */
+  reindentOnInsertAtEmptyLineEnd: boolean;
+
+  /**
    * Add two spaces after '.', '?', and '!' when joining or formatting?
    */
   joinspaces: boolean;

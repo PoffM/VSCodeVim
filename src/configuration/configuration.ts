@@ -234,6 +234,8 @@ class Configuration implements IConfiguration {
 
   autoindent = true;
 
+  reindentOnInsertAtEmptyLineEnd = false;
+
   matchpairs = '(:),{:},[:]';
 
   joinspaces = true;

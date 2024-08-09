@@ -801,6 +801,11 @@
           "description": "Indent code automatically.",
           "default": true
         },
+        "vim.reindentOnInsertAtEmptyLineEnd": {
+          "type": "boolean",
+          "description": "Runs VSCode's 'Reindent Selected Lines' command when you use <S-a> on an empty line.",
+          "default": false
+        },
         "vim.joinspaces": {
           "type": "boolean",
           "description": "Add two spaces after '.', '?', and '!' when joining or reformatting.",
