@@ -1191,6 +1191,16 @@ export class CommandInsertAtLineEnd extends BaseCommand {
 
   public override async exec(position: Position, vimState: VimState): Promise<void> {
     await vimState.setCurrentMode(Mode.Insert);
+
+    if (
+      configuration.reindentOnInsertAtEmptyLineEnd &&
+      vimState.document.lineAt(position).isEmptyOrWhitespace
+    ) {
+      vimState.recordedState.transformer.vscodeCommand('editor.action.reindentselectedlines');
+      vimState.recordedState.transformer.vscodeCommand('cursorEnd');
+      return;
+    }
+
     vimState.cursorStopPosition = vimState.cursorStartPosition = position.getLineEnd();
   }
 }
